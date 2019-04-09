@@ -1,0 +1,48 @@
+body {
+    margin: 20px;
+    padding: 0;
+    background: #333;
+}
+
+.gallery {
+    max-width: 850px;
+    margin: auto;
+    border: 3px solid #fff;
+    background: #fff;
+}
+
+.gallery__main-img img, .gallery__imgs img {
+    width: 100%;
+}
+
+.gallery__imgs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+}
+
+.gallery__imgs img {
+    cursor: pointer;
+}
+
+.gallery__imgs img:hover {
+    filter: brightness(80%);
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in 1 forwards;
+}
+
+@media (max-width: 600px) {
+    .gallery__imgs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
